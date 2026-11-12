@@ -1,0 +1,1958 @@
+/* ==========================================================================
+   STYLES.CSS - CLUB LA CHECO OFICIAL
+   Estética de Camiseta Oficial de Fútbol / Hockey
+   Metodología BEM estricta • CSS Moderno • Sin clases de utilidad
+   ========================================================================== */
+
+@import url("./variables.css");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@400;600;700;800;900&family=Teko:wght@500;600;700&display=swap");
+
+/* --- RESET & BOX SIZING --- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+  background-color: var(--color-bg-main);
+  color: var(--color-text-light);
+  font-family: var(--font-family-body);
+  line-height: var(--line-height-normal);
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+  background-color: var(--color-bg-main);
+  background: transparent;
+}
+
+/* ==========================================================================
+   VIDEO DE FONDO GLOBAL DE LA WEB (.video-background)
+   Reproduce camiseta.mp4 en toda la página de fondo con overlay protector
+   ========================================================================== */
+.video-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.video-background__media {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  transform: translate(-50%, -50%);
+  object-fit: cover;
+  filter: brightness(0.55) contrast(1.15) saturate(1.1);
+}
+
+.video-background__overlay {
+  position: absolute;
+  inset: 0;
+  background: 
+    radial-gradient(ellipse at 50% 20%, rgba(124, 45, 126, 0.38) 0%, rgba(20, 7, 22, 0.75) 55%, rgba(10, 3, 12, 0.9) 100%),
+    linear-gradient(180deg, rgba(16, 5, 18, 0.35) 0%, rgba(16, 5, 18, 0.75) 100%);
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+}
+
+/* Selección de texto */
+::selection {
+  background-color: var(--color-violet-light);
+  color: var(--color-white);
+}
+
+/* Enlaces generales */
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+img, video {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  background: transparent;
+}
+
+/* Contenedor centralizado */
+.site-container {
+  width: 100%;
+  max-width: var(--container-max-width);
+  margin-inline: auto;
+  padding-inline: var(--container-padding);
+}
+
+/* ==========================================================================
+   1. CUELLO Y HEADER DE LA CAMISETA (.jersey-collar)
+   Simula el cuello ribeteado de la camiseta con su etiqueta de talle oficial
+   ========================================================================== */
+.jersey-collar {
+  width: 100%;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background-color: rgba(30, 13, 34, 0.94);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: 2px solid rgba(124, 45, 126, 0.4);
+  box-shadow: var(--shadow-md);
+}
+
+/* Etiqueta interna de talle en el cuello */
+.jersey-collar__inner-tag {
+  background: linear-gradient(90deg, #1b091f, #3b113c, #1b091f);
+  color: var(--color-gold-light);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-semibold);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  text-align: center;
+  padding: 4px var(--space-sm);
+  border-bottom: 1px dashed rgba(245, 158, 11, 0.35);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-xs);
+}
+
+.jersey-collar__inner-tag-icon {
+  color: var(--color-gold);
+  font-size: 0.85rem;
+}
+
+/* Ribete del cuello (costura elástica) */
+.jersey-collar__rib {
+  height: 4px;
+  background: repeating-linear-gradient(
+    90deg,
+    var(--color-violet-light) 0px,
+    var(--color-violet-light) 6px,
+    var(--color-white) 6px,
+    var(--color-white) 9px,
+    var(--color-gold) 9px,
+    var(--color-gold) 12px
+  );
+}
+
+/* Barra de Navegación */
+.jersey-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-block: var(--space-sm);
+  gap: var(--space-md);
+}
+
+.jersey-nav__brand {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+.jersey-nav__crest {
+  width: clamp(40px, 35px + 1vw, 52px);
+  aspect-ratio: 3371 / 4000;
+  object-fit: contain;
+  filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.5));
+  transition: transform var(--transition-normal);
+}
+
+.jersey-nav__crest:hover {
+  transform: scale(1.08) rotate(-2deg);
+}
+
+.jersey-nav__brand-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.jersey-nav__club-name {
+  font-family: var(--font-family-display);
+  font-weight: var(--font-weight-black);
+  font-size: var(--font-size-lg);
+  color: var(--color-white);
+  line-height: var(--line-height-tight);
+  letter-spacing: -0.01em;
+}
+
+.jersey-nav__club-locality {
+  font-size: var(--font-size-xs);
+  color: var(--color-gold-light);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-weight: var(--font-weight-medium);
+}
+
+/* Enlaces del Menú */
+.jersey-nav__menu {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  gap: var(--space-md);
+}
+
+.jersey-nav__link {
+  font-family: var(--font-family-display);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-light);
+  padding: 6px 12px;
+  border-radius: var(--radius-pill);
+  transition: all var(--transition-fast);
+  position: relative;
+}
+
+.jersey-nav__link:hover {
+  color: var(--color-white);
+  background-color: rgba(124, 45, 126, 0.3);
+}
+
+.jersey-nav__link--active {
+  color: var(--color-white);
+  background-color: var(--color-violet-light);
+  box-shadow: 0 0 12px var(--color-violet-glow);
+}
+
+.jersey-nav__cta {
+  font-family: var(--font-family-display);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-violet-deep);
+  background: linear-gradient(135deg, var(--color-gold-light), var(--color-gold));
+  padding: 9px 18px;
+  border-radius: var(--radius-pill);
+  box-shadow: 0 2px 12px var(--color-gold-glow);
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.jersey-nav__cta:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 18px rgba(245, 158, 11, 0.55);
+}
+
+/* Botón hamburguesa mobile */
+.jersey-nav__toggle {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  padding: 8px;
+  border-radius: var(--radius-xs);
+  border: 1px solid var(--color-border-subtle);
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+.jersey-nav__toggle-bar {
+  width: 22px;
+  height: 2px;
+  background-color: var(--color-white);
+  border-radius: 2px;
+  transition: transform var(--transition-fast);
+}
+
+/* ==========================================================================
+   2. HERO PRINCIPAL INSTITUCIONAL (.club-hero)
+   Presentación del Club, Escudo Oficial en 3D y Semillero de Niños
+   ========================================================================== */
+.club-hero {
+  position: relative;
+  overflow: hidden;
+  padding-top: clamp(2rem, 1.5rem + 2.5vw, 4rem);
+  padding-bottom: clamp(3rem, 2rem + 4vw, 5.5rem);
+}
+
+.club-hero__card {
+  position: relative;
+  background: 
+    radial-gradient(ellipse at 50% 15%, rgba(124, 45, 126, 0.45) 0%, transparent 60%),
+    linear-gradient(180deg, rgba(30, 13, 34, 0.92) 0%, rgba(18, 6, 20, 0.96) 100%);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 2px solid rgba(124, 45, 126, 0.5);
+  border-radius: var(--radius-xl);
+  box-shadow: 
+    0 25px 60px rgba(0, 0, 0, 0.9),
+    inset 0 0 60px rgba(0, 0, 0, 0.65),
+    inset 0 1px 2px rgba(255, 255, 255, 0.2);
+  padding: clamp(2rem, 1.5rem + 3vw, 4.5rem) clamp(1.5rem, 1rem + 2.5vw, 4rem);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: var(--space-md);
+}
+
+/* Escudo Oficial en 3D con efecto de relieve y parallax */
+.club-hero__crest-stage {
+  perspective: 800px;
+  margin-bottom: var(--space-xs);
+}
+
+.club-hero__crest-frame {
+  position: relative;
+  width: clamp(130px, 110px + 6vw, 200px);
+  aspect-ratio: 3371 / 4000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-jersey-crest);
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.22) 0%, transparent 70%);
+  border: 3px solid rgba(245, 158, 11, 0.75);
+  box-shadow: 
+    0 22px 45px rgba(0, 0, 0, 0.9),
+    0 0 40px rgba(124, 45, 126, 0.55),
+    inset 0 2px 5px rgba(255, 255, 255, 0.5);
+  padding: 8px;
+  cursor: pointer;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease;
+  transform-style: preserve-3d;
+}
+
+.club-hero__crest-frame:hover {
+  transform: scale(1.06) translateY(-6px) rotateY(6deg);
+  box-shadow: 
+    0 28px 55px rgba(0, 0, 0, 0.95),
+    0 0 50px rgba(245, 158, 11, 0.7);
+}
+
+.club-hero__crest-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  filter: drop-shadow(0 6px 14px rgba(0, 0, 0, 0.9));
+  transform: translateZ(30px);
+}
+
+.club-hero__crest-glow {
+  position: absolute;
+  inset: -12px;
+  border-radius: inherit;
+  background: radial-gradient(circle, rgba(245, 158, 11, 0.3) 0%, transparent 70%);
+  animation: pulseGlow 3.5s ease-in-out infinite;
+  pointer-events: none;
+}
+
+.club-hero__badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background-color: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: var(--color-gold-light);
+  font-family: var(--font-family-display);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-bold);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  padding: 6px 18px;
+  border-radius: var(--radius-pill);
+}
+
+.club-hero__title {
+  font-family: var(--font-family-display);
+  font-size: clamp(2.4rem, 2rem + 3vw, 4.4rem);
+  font-weight: var(--font-weight-black);
+  color: var(--color-white);
+  line-height: var(--line-height-tight);
+  text-transform: uppercase;
+  letter-spacing: -0.01em;
+  text-shadow: 
+    0 4px 12px rgba(0, 0, 0, 0.9),
+    0 0 30px rgba(124, 45, 126, 0.4);
+}
+
+.club-hero__subtitle {
+  font-family: var(--font-family-display);
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-gold-light);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+}
+
+.club-hero__lead {
+  max-width: 760px;
+  font-size: var(--font-size-base);
+  color: var(--color-text-light);
+  line-height: var(--line-height-relaxed);
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.8);
+}
+
+/* Tarjetas de estadísticas de la institución */
+.club-hero__stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: var(--space-md);
+  width: 100%;
+  margin-top: var(--space-md);
+}
+
+.club-hero__stat-card {
+  background-color: rgba(0, 0, 0, 0.35);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: var(--radius-md);
+  padding: var(--space-md);
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  transition: transform var(--transition-fast), border-color var(--transition-fast);
+}
+
+.club-hero__stat-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--color-border-violet);
+}
+
+.club-hero__stat-val {
+  font-family: var(--font-family-jersey);
+  font-size: clamp(2rem, 1.8rem + 1.2vw, 2.8rem);
+  font-weight: var(--font-weight-black);
+  color: var(--color-white);
+  line-height: 1;
+}
+
+.club-hero__stat-label {
+  font-size: var(--font-size-xs);
+  color: var(--color-gold-light);
+  font-weight: var(--font-weight-semibold);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.club-hero__stat-sub {
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+}
+
+.club-hero__actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-md);
+  flex-wrap: wrap;
+  margin-top: var(--space-md);
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    opacity: 0.4;
+    transform: scale(0.96);
+  }
+  50% {
+    opacity: 0.85;
+    transform: scale(1.04);
+  }
+}
+
+/* Botones de acción principales */
+.btn-patch {
+  font-family: var(--font-family-display);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-bold);
+  padding: 14px 28px;
+  border-radius: var(--radius-pill);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  transition: all var(--transition-fast);
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-patch--primary {
+  background: linear-gradient(135deg, var(--color-gold-light), var(--color-gold));
+  color: #1c081e;
+  box-shadow: 0 4px 20px var(--color-gold-glow);
+  border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.btn-patch--primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(245, 158, 11, 0.65);
+}
+
+.btn-patch--secondary {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: var(--color-white);
+  border: 2px solid rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(8px);
+}
+
+.btn-patch--secondary:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  border-color: var(--color-white);
+  transform: translateY(-3px);
+}
+
+/* Dobladillo inferior con parche de Autenticidad Deportiva */
+.jersey-hero__hem-patch {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: var(--space-2xl);
+  padding-top: var(--space-md);
+  border-top: 2px dashed rgba(255, 255, 255, 0.16);
+  flex-wrap: wrap;
+  gap: var(--space-md);
+}
+
+.jersey-hero__hologram {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 8px 16px;
+  background: linear-gradient(135deg, rgba(245, 158, 11, 0.15), rgba(124, 45, 126, 0.25));
+  border: 1px solid var(--color-border-gold);
+  border-radius: var(--radius-sm);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
+}
+
+.jersey-hero__hologram-seal {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: radial-gradient(circle, var(--color-gold-light), var(--color-gold-dark));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #1c081e;
+  font-weight: 900;
+  font-size: 0.75rem;
+}
+
+.jersey-hero__hologram-text {
+  font-family: var(--font-family-display);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-light);
+  line-height: 1.2;
+}
+
+.jersey-hero__animated-patch {
+  width: 44px;
+  height: 33px;
+  border-radius: var(--radius-xs);
+  overflow: hidden;
+  border: 1px solid var(--color-border-gold);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #000000;
+  margin-left: 6px;
+}
+
+.jersey-hero__gif-badge {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.jersey-hero__quick-stats {
+  display: flex;
+  align-items: center;
+  gap: var(--space-lg);
+  flex-wrap: wrap;
+}
+
+.jersey-hero__stat-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.jersey-hero__stat-number {
+  font-family: var(--font-family-jersey);
+  font-size: var(--font-size-2xl);
+  color: var(--color-white);
+  line-height: 1;
+}
+
+.jersey-hero__stat-label {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* ==========================================================================
+   3. EL SEMILLERO & NUESTROS CRACKS EN ACCIÓN (.cracks-section)
+   Video JUGADOR.mp4, categorías formativas y modelos de camisetas de los chicos
+   ========================================================================== */
+.cracks-section {
+  padding-block: var(--space-2xl);
+  position: relative;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: var(--space-xl);
+}
+
+.section-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background-color: rgba(124, 45, 126, 0.3);
+  border: 1px solid var(--color-border-violet);
+  color: var(--color-gold-light);
+  font-family: var(--font-family-display);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-bold);
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  padding: 6px 16px;
+  border-radius: var(--radius-pill);
+  margin-bottom: var(--space-xs);
+}
+
+.section-title {
+  font-family: var(--font-family-display);
+  font-size: var(--font-size-3xl);
+  font-weight: var(--font-weight-black);
+  color: var(--color-white);
+  line-height: var(--line-height-tight);
+  margin-bottom: var(--space-xs);
+}
+
+.section-subtitle {
+  font-size: var(--font-size-base);
+  color: var(--color-text-muted);
+  max-width: 600px;
+  margin-inline: auto;
+}
+
+/* Grilla del Semillero: Video a la izquierda, información de categorías a la derecha */
+.cracks-grid {
+  display: grid;
+  grid-template-columns: minmax(320px, 1.15fr) 1fr;
+  gap: var(--space-xl);
+  align-items: stretch;
+}
+
+/* Tarjeta del Video JUGADOR.mp4 */
+.cracks-video-card {
+  background-color: var(--color-bg-surface);
+  border: 2px solid rgba(124, 45, 126, 0.45);
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 
+    0 20px 45px rgba(0, 0, 0, 0.85),
+    0 0 35px rgba(124, 45, 126, 0.25);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  transition: transform var(--transition-normal), border-color var(--transition-normal), box-shadow var(--transition-normal);
+}
+
+.cracks-video-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--color-gold);
+  box-shadow: 
+    0 25px 55px rgba(0, 0, 0, 0.95),
+    0 0 45px rgba(245, 158, 11, 0.35);
+}
+
+.cracks-video-card__viewport {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  background-color: #0b030c;
+  overflow: hidden;
+}
+
+.cracks-video-card__player {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.cracks-video-card__live-badge {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  background-color: rgba(18, 6, 20, 0.88);
+  backdrop-filter: blur(8px);
+  color: var(--color-gold-light);
+  border: 1px solid var(--color-border-gold);
+  font-family: var(--font-family-display);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-bold);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 6px 14px;
+  border-radius: var(--radius-pill);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+}
+
+.cracks-video-card__dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #22c55e;
+  box-shadow: 0 0 8px #22c55e;
+  animation: liveDotPulse 2s infinite;
+}
+
+@keyframes liveDotPulse {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.35;
+    transform: scale(0.8);
+  }
+}
+
+.cracks-video-card__footer {
+  padding: var(--space-lg);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+  background: linear-gradient(180deg, rgba(20, 7, 22, 0.6) 0%, rgba(12, 4, 14, 0.95) 100%);
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  flex-grow: 1;
+  justify-content: space-between;
+}
+
+.cracks-video-card__info {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.cracks-video-card__title {
+  font-family: var(--font-family-display);
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-white);
+}
+
+.cracks-video-card__desc {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-muted);
+  line-height: var(--line-height-normal);
+}
+
+.cracks-video-card__tag {
+  font-family: var(--font-family-display);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-gold);
+  letter-spacing: 0.08em;
+  margin-top: 6px;
+}
+
+/* Tarjeta informativa de categorías y modelos de camisetas */
+.cracks-info-card {
+  background-color: var(--color-bg-surface);
+  border: 1px solid var(--color-border-subtle);
+  border-radius: var(--radius-xl);
+  padding: clamp(1.5rem, 1rem + 2vw, 2.5rem);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: var(--space-md);
+  box-shadow: var(--shadow-lg);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+}
+
+.cracks-info-card__header {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.cracks-info-card__badge {
+  color: var(--color-gold-light);
+  font-family: var(--font-family-display);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-bold);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+}
+
+.cracks-info-card__title {
+  font-family: var(--font-family-display);
+  font-size: var(--font-size-2xl);
+  font-weight: var(--font-weight-black);
+  color: var(--color-white);
+  line-height: var(--line-height-tight);
+}
+
+.cracks-info-card__text {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-light);
+  line-height: var(--line-height-normal);
+}
+
+.cracks-categories {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.cracks-category-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  padding: 12px 16px;
+  border-radius: var(--radius-md);
+  background-color: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  transition: background-color var(--transition-fast), border-color var(--transition-fast), transform var(--transition-fast);
+}
+
+.cracks-category-item:hover {
+  background-color: rgba(124, 45, 126, 0.2);
+  border-color: var(--color-border-violet);
+  transform: translateX(4px);
+}
+
+.cracks-category-item__icon {
+  font-size: 1.5rem;
+  flex-shrink: 0;
+  line-height: 1;
+  margin-top: 2px;
+}
+
+.cracks-category-item__details {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.cracks-category-item__title {
+  font-family: var(--font-family-display);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-white);
+}
+
+.cracks-category-item__desc {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-muted);
+  line-height: 1.35;
+}
+
+/* Nota explicativa de los modelos de camisetas infantiles */
+.cracks-jersey-note {
+  background: linear-gradient(135deg, rgba(124, 45, 126, 0.22) 0%, rgba(30, 13, 34, 0.65) 100%);
+  border: 1px dashed var(--color-border-violet);
+  border-radius: var(--radius-md);
+  padding: var(--space-md);
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.cracks-jersey-note__header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.cracks-jersey-note__icon {
+  font-size: 1.25rem;
+}
+
+.cracks-jersey-note__title {
+  font-family: var(--font-family-display);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-gold-light);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.cracks-jersey-note__text {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-light);
+  line-height: 1.45;
+}
+
+.cracks-info-card__actions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  flex-wrap: wrap;
+  margin-top: var(--space-xs);
+}
+
+@media (max-width: 992px) {
+  .cracks-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ==========================================================================
+   4. LA PASARELA OFICIAL: CAROUSEL INTERACTIVO (.pasarela)
+   Galería deslizante de imágenes de jugadores, canchas, niños y mística
+   ========================================================================== */
+.gallery-section {
+  padding-block: var(--space-2xl);
+}
+
+.gallery-section__header {
+  text-align: center;
+  margin-bottom: var(--space-lg);
+}
+
+/* Filtros de la Pasarela */
+.gallery-filters {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-xs);
+  flex-wrap: wrap;
+  margin-bottom: var(--space-xl);
+}
+
+.gallery-filters__btn {
+  font-family: var(--font-family-display);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-semibold);
+  padding: 8px 18px;
+  border-radius: var(--radius-pill);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  background-color: rgba(255, 255, 255, 0.04);
+  color: var(--color-text-light);
+  transition: all var(--transition-fast);
+}
+
+.gallery-filters__btn:hover {
+  background-color: rgba(124, 45, 126, 0.25);
+  color: var(--color-white);
+}
+
+.gallery-filters__btn--active {
+  background-color: var(--color-violet-light);
+  border-color: var(--color-violet-light);
+  color: var(--color-white);
+  box-shadow: 0 0 14px var(--color-violet-glow);
+}
+
+/* Estructura del Carousel */
+.pasarela {
+  position: relative;
+  width: 100%;
+}
+
+.pasarela__viewport {
+  overflow: hidden;
+  border-radius: var(--radius-lg);
+  padding-block: 10px;
+}
+
+.pasarela__track {
+  display: flex;
+  gap: var(--space-md);
+  transition: transform var(--transition-smooth);
+  will-change: transform;
+}
+
+/* Tarjeta individual de la pasarela */
+.pasarela-card {
+  flex: 0 0 clamp(270px, 240px + 6vw, 360px);
+  background-color: var(--color-bg-card);
+  border: 1px solid var(--color-border-subtle);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  box-shadow: var(--shadow-md);
+  transition: transform var(--transition-normal), box-shadow var(--transition-normal), border-color var(--transition-normal);
+  cursor: pointer;
+  position: relative;
+}
+
+.pasarela-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-lg), 0 0 20px rgba(124, 45, 126, 0.35);
+  border-color: var(--color-border-violet);
+}
+
+/* Contenedor de la foto con ratio deportivo */
+.pasarela-card__media {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  background-color: #0d040e;
+}
+
+.pasarela-card__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition-smooth);
+}
+
+.pasarela-card:hover .pasarela-card__img {
+  transform: scale(1.08);
+}
+
+/* Categoría flotante sobre la foto */
+.pasarela-card__badge {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  background-color: rgba(20, 7, 22, 0.85);
+  backdrop-filter: blur(6px);
+  color: var(--color-gold-light);
+  font-family: var(--font-family-display);
+  font-size: 0.72rem;
+  font-weight: var(--font-weight-bold);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 4px 10px;
+  border-radius: var(--radius-pill);
+  border: 1px solid rgba(245, 158, 11, 0.3);
+}
+
+/* Icono de zoom en hover */
+.pasarela-card__zoom-indicator {
+  position: absolute;
+  bottom: 12px;
+  right: 12px;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, 0.65);
+  backdrop-filter: blur(4px);
+  color: var(--color-white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transform: scale(0.8);
+  transition: all var(--transition-fast);
+}
+
+.pasarela-card:hover .pasarela-card__zoom-indicator {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* Información al pie de la foto */
+.pasarela-card__body {
+  padding: var(--space-md);
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  background: linear-gradient(180deg, var(--color-bg-card), #1b0a1e);
+}
+
+.pasarela-card__title {
+  font-family: var(--font-family-display);
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-white);
+}
+
+.pasarela-card__caption {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-muted);
+  line-height: var(--line-height-normal);
+}
+
+/* Controles de Navegación (Flechas Prev / Next) */
+.pasarela-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: var(--space-md);
+}
+
+.pasarela-nav__controls {
+  display: flex;
+  gap: 10px;
+}
+
+.pasarela-btn {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background-color: var(--color-bg-surface);
+  border: 1px solid var(--color-border-subtle);
+  color: var(--color-white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  transition: all var(--transition-fast);
+}
+
+.pasarela-btn:hover {
+  background-color: var(--color-violet-light);
+  border-color: var(--color-white);
+  transform: scale(1.08);
+}
+
+/* Paginador de puntos */
+.pasarela-dots {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.pasarela-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.2);
+  transition: all var(--transition-fast);
+  cursor: pointer;
+}
+
+.pasarela-dot--active {
+  width: 24px;
+  border-radius: var(--radius-pill);
+  background-color: var(--color-gold);
+  box-shadow: 0 0 8px var(--color-gold);
+}
+
+/* ==========================================================================
+   5. SPOTLIGHT DE VIDEO: "EL CORAZÓN CHEQUENSE" (.video-spotlight)
+   Presenta el video del corazón con diseño deportivo y estética de camiseta
+   ========================================================================== */
+.video-spotlight {
+  padding-block: var(--space-2xl);
+}
+
+.video-card {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-xl);
+  align-items: center;
+  background: 
+    var(--texture-jersey-mesh),
+    linear-gradient(135deg, var(--color-bg-surface), #260a29);
+  background-size: var(--texture-jersey-mesh-size), 100% 100%;
+  border: 2px solid rgba(124, 45, 126, 0.35);
+  border-radius: var(--radius-xl);
+  padding: clamp(1.5rem, 1rem + 2vw, 3.5rem);
+  box-shadow: var(--shadow-lg);
+  overflow: hidden;
+}
+
+.video-card__player-box {
+  position: relative;
+  width: 100%;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  aspect-ratio: 16 / 9;
+  background-color: #000000;
+}
+
+.video-card__player {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.video-card__content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.video-card__quote {
+  font-family: var(--font-family-display);
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-black);
+  color: var(--color-white);
+  line-height: var(--line-height-snug);
+}
+
+.video-card__quote-highlight {
+  color: var(--color-gold);
+  text-shadow: 0 0 15px var(--color-gold-glow);
+}
+
+.video-card__text {
+  font-size: var(--font-size-base);
+  color: var(--color-text-light);
+  line-height: var(--line-height-relaxed);
+}
+
+.video-card__features {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: var(--space-xs);
+}
+
+.video-card__feature-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: var(--font-size-sm);
+  color: var(--color-text-light);
+}
+
+.video-card__feature-icon {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background-color: rgba(245, 158, 11, 0.2);
+  color: var(--color-gold);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8rem;
+  flex-shrink: 0;
+}
+
+/* ==========================================================================
+   6. SECCIÓN HISTORIA, IDENTIDAD & VALORES (.history-section)
+   10+ años de historia, sede en Suecia 1600 y corazón de barrio
+   ========================================================================== */
+.history-section {
+  padding-block: var(--space-2xl);
+}
+
+.history-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--space-md);
+  margin-top: var(--space-xl);
+}
+
+.history-card {
+  background-color: var(--color-bg-card);
+  border: 1px solid var(--color-border-subtle);
+  border-radius: var(--radius-md);
+  padding: var(--space-lg);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+  transition: transform var(--transition-fast), border-color var(--transition-fast);
+  position: relative;
+  overflow: hidden;
+}
+
+.history-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--color-border-violet);
+}
+
+.history-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--color-violet-light), var(--color-gold));
+}
+
+.history-card__icon {
+  font-size: 2.2rem;
+  color: var(--color-gold);
+  margin-bottom: var(--space-xs);
+}
+
+.history-card__title {
+  font-family: var(--font-family-display);
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-white);
+}
+
+.history-card__text {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-muted);
+  line-height: var(--line-height-relaxed);
+}
+
+/* ==========================================================================
+   7. SECCIÓN ACTIVIDADES & DEPORTES (.activities-section)
+   Fútbol Infantil Masculino y Femenino, Hockey Femenino
+   ========================================================================== */
+.activities-section {
+  padding-block: var(--space-2xl);
+}
+
+.activities-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: var(--space-lg);
+  margin-top: var(--space-xl);
+}
+
+.activity-card {
+  background-color: var(--color-bg-surface);
+  border: 1px solid var(--color-border-subtle);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform var(--transition-normal), box-shadow var(--transition-normal);
+}
+
+.activity-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-lg);
+}
+
+.activity-card__media {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+}
+
+.activity-card__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition-smooth);
+}
+
+.activity-card:hover .activity-card__img {
+  transform: scale(1.06);
+}
+
+.activity-card__tag {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  background-color: rgba(20, 7, 22, 0.88);
+  backdrop-filter: blur(6px);
+  color: var(--color-gold-light);
+  font-family: var(--font-family-display);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-bold);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 5px 12px;
+  border-radius: var(--radius-pill);
+  border: 1px solid var(--color-border-gold);
+}
+
+.activity-card__body {
+  padding: var(--space-lg);
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  gap: var(--space-xs);
+}
+
+.activity-card__title {
+  font-family: var(--font-family-display);
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-white);
+}
+
+.activity-card__desc {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-muted);
+  line-height: var(--line-height-relaxed);
+  margin-bottom: var(--space-sm);
+}
+
+.activity-card__list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: auto;
+  padding-top: var(--space-sm);
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.activity-card__list-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: var(--font-size-xs);
+  color: var(--color-text-light);
+}
+
+.activity-card__check {
+  color: var(--color-gold);
+  font-weight: bold;
+}
+
+/* ==========================================================================
+   8. SECCIÓN LA SEDE & UBICACIÓN (.venue-section)
+   Calle Suecia Nº 1600, Florencio Varela
+   ========================================================================== */
+.venue-section {
+  padding-block: var(--space-2xl);
+}
+
+.venue-card {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: var(--space-xl);
+  align-items: center;
+  background-color: var(--color-bg-card);
+  border: 1px solid var(--color-border-subtle);
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+}
+
+.venue-card__media {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: 380px;
+}
+
+.venue-card__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.venue-card__content {
+  padding: clamp(1.5rem, 1rem + 2vw, 3rem);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.venue-info-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+  margin-block: var(--space-sm);
+}
+
+.venue-info-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+}
+
+.venue-info-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-sm);
+  background-color: rgba(124, 45, 126, 0.3);
+  color: var(--color-gold);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  flex-shrink: 0;
+  border: 1px solid var(--color-border-violet);
+}
+
+.venue-info-details {
+  display: flex;
+  flex-direction: column;
+}
+
+.venue-info-title {
+  font-family: var(--font-family-display);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-gold-light);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.venue-info-desc {
+  font-size: var(--font-size-sm);
+  color: var(--color-white);
+  font-weight: var(--font-weight-medium);
+}
+
+.venue-map-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: linear-gradient(135deg, var(--color-violet-light), var(--color-violet-primary));
+  color: var(--color-white);
+  font-family: var(--font-family-display);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-bold);
+  padding: 12px 24px;
+  border-radius: var(--radius-pill);
+  box-shadow: 0 4px 15px var(--color-violet-glow);
+  align-self: flex-start;
+  margin-top: var(--space-xs);
+  transition: all var(--transition-fast);
+}
+
+.venue-map-link:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(124, 45, 126, 0.6);
+}
+
+/* ==========================================================================
+   9. SECCIÓN CONTACTO & REDES (.contact-section)
+   Teléfono directo, Instagram de Hockey, Facebook y Formulario
+   ========================================================================== */
+.contact-section {
+  padding-block: var(--space-2xl);
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-xl);
+  margin-top: var(--space-xl);
+}
+
+.contact-card {
+  background-color: var(--color-bg-surface);
+  border: 1px solid var(--color-border-subtle);
+  border-radius: var(--radius-lg);
+  padding: clamp(1.5rem, 1rem + 2vw, 2.5rem);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.contact-card__title {
+  font-family: var(--font-family-display);
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-white);
+}
+
+.contact-card__desc {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-muted);
+  line-height: var(--line-height-normal);
+}
+
+.contact-channels {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.contact-item-btn {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 18px;
+  background-color: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--color-border-subtle);
+  border-radius: var(--radius-md);
+  color: var(--color-white);
+  transition: all var(--transition-fast);
+}
+
+.contact-item-btn:hover {
+  background-color: rgba(124, 45, 126, 0.2);
+  border-color: var(--color-violet-light);
+  transform: translateX(4px);
+}
+
+.contact-item-btn__icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: rgba(245, 158, 11, 0.15);
+  color: var(--color-gold);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  flex-shrink: 0;
+}
+
+.contact-item-btn__info {
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-item-btn__title {
+  font-family: var(--font-family-display);
+  font-size: var(--font-size-xs);
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.contact-item-btn__value {
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-white);
+}
+
+/* Formulario de consulta rápida */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.form-label {
+  font-family: var(--font-family-display);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-light);
+}
+
+.form-input,
+.form-select,
+.form-textarea {
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: var(--color-white);
+  padding: 12px 14px;
+  border-radius: var(--radius-sm);
+  font-family: inherit;
+  font-size: var(--font-size-sm);
+  outline: none;
+  transition: border-color var(--transition-fast);
+}
+
+.form-input:focus,
+.form-select:focus,
+.form-textarea:focus {
+  border-color: var(--color-gold);
+}
+
+.form-textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+.form-submit-btn {
+  background: linear-gradient(135deg, var(--color-gold-light), var(--color-gold));
+  color: #1b071e;
+  font-family: var(--font-family-display);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-bold);
+  padding: 14px 20px;
+  border-radius: var(--radius-sm);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  margin-top: var(--space-xs);
+  transition: all var(--transition-fast);
+}
+
+.form-submit-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 18px var(--color-gold-glow);
+}
+
+/* ==========================================================================
+   10. MODAL LIGHTBOX PARA LA PASARELA (.lightbox)
+   Visualizador a pantalla completa de las fotos
+   ========================================================================== */
+.lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 999;
+  background-color: rgba(10, 3, 11, 0.95);
+  backdrop-filter: blur(12px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-md);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity var(--transition-normal), visibility var(--transition-normal);
+}
+
+.lightbox--active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.lightbox__dialog {
+  max-width: 900px;
+  width: 100%;
+  background-color: var(--color-bg-card);
+  border: 1px solid var(--color-border-subtle);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.9);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  transform: scale(0.92);
+  transition: transform var(--transition-normal);
+}
+
+.lightbox--active .lightbox__dialog {
+  transform: scale(1);
+}
+
+.lightbox__close-btn {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: var(--color-white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  z-index: 10;
+  transition: background-color var(--transition-fast);
+}
+
+.lightbox__close-btn:hover {
+  background-color: var(--color-violet-light);
+}
+
+.lightbox__image-container {
+  width: 100%;
+  max-height: 70vh;
+  background-color: #000000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.lightbox__img {
+  max-width: 100%;
+  max-height: 70vh;
+  object-fit: contain;
+}
+
+.lightbox__caption-box {
+  padding: var(--space-md) var(--space-lg);
+  background-color: var(--color-bg-surface);
+  border-top: 1px solid var(--color-border-subtle);
+}
+
+.lightbox__title {
+  font-family: var(--font-family-display);
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-white);
+}
+
+.lightbox__desc {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-muted);
+}
+
+/* ==========================================================================
+   11. FOOTER: "EL DOBLADILLO DE LA CAMISETA" (.jersey-footer)
+   Doble costura textil, parche de autenticidad y datos oficiales
+   ========================================================================== */
+.jersey-footer {
+  margin-top: auto;
+  background-color: #120514;
+  border-top: 2px solid rgba(124, 45, 126, 0.4);
+  position: relative;
+}
+
+/* Doble costura típica del dobladillo inferior de la camiseta */
+.jersey-footer__stitching {
+  height: 6px;
+  background: repeating-linear-gradient(
+    90deg,
+    transparent 0px,
+    transparent 6px,
+    rgba(255, 255, 255, 0.25) 6px,
+    rgba(255, 255, 255, 0.25) 12px
+  );
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.jersey-footer__inner {
+  padding-block: var(--space-2xl) var(--space-lg);
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: var(--space-xl);
+}
+
+.jersey-footer__brand {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.jersey-footer__brand-row {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+.jersey-footer__crest {
+  width: 50px;
+  aspect-ratio: 3371 / 4000;
+  object-fit: contain;
+}
+
+.jersey-footer__club-name {
+  font-family: var(--font-family-display);
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-black);
+  color: var(--color-white);
+}
+
+.jersey-footer__motto {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-muted);
+  max-width: 440px;
+  line-height: var(--line-height-relaxed);
+}
+
+.jersey-footer__nav-group {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.jersey-footer__heading {
+  font-family: var(--font-family-display);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-white);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 6px;
+}
+
+.jersey-footer__link {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-muted);
+  transition: color var(--transition-fast);
+}
+
+.jersey-footer__link:hover {
+  color: var(--color-gold-light);
+}
+
+.jersey-footer__bottom-bar {
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  padding-block: var(--space-md);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: var(--space-sm);
+  font-size: var(--font-size-xs);
+  color: var(--color-text-muted);
+}
+
+.jersey-footer__legal-note {
+  color: rgba(255, 255, 255, 0.4);
+}
+
+/* ==========================================================================
+   RESPONSIVE DESIGN (MEDIA QUERIES)
+   ========================================================================== */
+@media (max-width: 992px) {
+  .jersey-customizer__interactive {
+    grid-template-columns: 1fr;
+  }
+  
+  .venue-card {
+    grid-template-columns: 1fr;
+  }
+  
+  .venue-card__media {
+    min-height: 260px;
+  }
+  
+  .video-card {
+    grid-template-columns: 1fr;
+  }
+
+  .jersey-footer__inner {
+    grid-template-columns: 1fr;
+    gap: var(--space-lg);
+  }
+}
+
+@media (max-width: 768px) {
+  .jersey-nav__menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-color: rgba(25, 9, 29, 0.98);
+    backdrop-filter: blur(16px);
+    flex-direction: column;
+    padding: var(--space-lg);
+    border-bottom: 2px solid var(--color-violet-light);
+    box-shadow: var(--shadow-lg);
+  }
+
+  .jersey-nav__menu--open {
+    display: flex;
+  }
+
+  .jersey-nav__toggle {
+    display: flex;
+  }
+
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .jersey-hero__chest-row {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .jersey-hero__technical-seal {
+    align-items: center;
+    text-align: center;
+  }
+
+  .jersey-hero__hem-patch {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+}

@@ -1,0 +1,1008 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Club La Checo | Sitio Oficial • Camiseta & Identidad Varelense</title>
+  <meta name="description" content="Sitio oficial del Club Social, Deportivo y Cultural La Checo de Florencio Varela. Fútbol infantil, hockey femenino, historia, camisetas y pasarela de imágenes oficial.">
+  <link rel="icon" type="image/png" href="escudvector.png">
+  
+  <!-- CSS del Design System y Estilos BEM -->
+  <link rel="stylesheet" href="variables.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- ======================================================================
+       VIDEO DE FONDO GLOBAL DE TODA LA WEB (camiseta.mp4)
+       ====================================================================== -->
+  <div class="video-background" aria-hidden="true">
+    <video class="video-background__media" autoplay muted loop playsinline poster="img/pecho.jpeg">
+      <source src="img/camiseta.mp4" type="video/mp4">
+    </video>
+    <div class="video-background__overlay"></div>
+  </div>
+
+  <!-- ======================================================================
+       1. CUELLO Y HEADER DE LA CAMISETA (.jersey-collar)
+       ====================================================================== -->
+  <header class="jersey-collar" id="inicio">
+    <!-- Etiqueta de Talle en el interior del cuello -->
+    <div class="jersey-collar__inner-tag">
+      <span class="jersey-collar__inner-tag-icon">★</span>
+      <span>CLUB SOCIAL, DEPORTIVO Y CULTURAL LA CHECO</span>
+      <span>•</span>
+      <span>FÚTBOL INFANTIL & HOCKEY • FLORENCIO VARELA</span>
+      <span>•</span>
+      <span>EL CLUB DE LOS CHICOS</span>
+      <span class="jersey-collar__inner-tag-icon">★</span>
+    </div>
+
+    <!-- Ribete elástico de la camiseta -->
+    <div class="jersey-collar__rib"></div>
+
+    <!-- Barra de Navegación -->
+    <div class="site-container">
+      <nav class="jersey-nav" aria-label="Navegación principal">
+        <a href="#inicio" class="jersey-nav__brand">
+          <img src="escudvector.png" alt="Escudo Oficial Club La Checo" class="jersey-nav__crest">
+          <div class="jersey-nav__brand-info">
+            <span class="jersey-nav__club-name">CLUB LA CHECO</span>
+            <span class="jersey-nav__club-locality">Florencio Varela • Arg</span>
+          </div>
+        </a>
+
+        <!-- Menú de Enlaces -->
+        <ul class="jersey-nav__menu" id="navMenu">
+          <li class="jersey-nav__item">
+            <a href="#inicio" class="jersey-nav__link jersey-nav__link--active">Inicio</a>
+          </li>
+          <li class="jersey-nav__item">
+            <a href="#cracks" class="jersey-nav__link">Semillero & Cracks</a>
+          </li>
+          <li class="jersey-nav__item">
+            <a href="#pasarela" class="jersey-nav__link">Pasarela de Fotos</a>
+          </li>
+          <li class="jersey-nav__item">
+            <a href="#video-corazon" class="jersey-nav__link">El Corazón</a>
+          </li>
+          <li class="jersey-nav__item">
+            <a href="#historia" class="jersey-nav__link">Historia</a>
+          </li>
+          <li class="jersey-nav__item">
+            <a href="#actividades" class="jersey-nav__link">Actividades</a>
+          </li>
+          <li class="jersey-nav__item">
+            <a href="#sede" class="jersey-nav__link">La Sede</a>
+          </li>
+          <li class="jersey-nav__item">
+            <a href="#contacto" class="jersey-nav__cta">¡Sumate al Club!</a>
+          </li>
+        </ul>
+
+        <!-- Botón Toggle para Móviles -->
+        <button class="jersey-nav__toggle" id="navToggle" aria-label="Abrir menú de navegación" aria-expanded="false">
+          <span class="jersey-nav__toggle-bar"></span>
+          <span class="jersey-nav__toggle-bar"></span>
+          <span class="jersey-nav__toggle-bar"></span>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- ======================================================================
+         2. HERO PRINCIPAL: IDENTIDAD INSTITUCIONAL (.club-hero)
+         El club de los chicos • Florencio Varela • Escudo Oficial 3D
+         ====================================================================== -->
+    <section class="club-hero" id="inicio">
+      <div class="site-container">
+        <div class="club-hero__card">
+          <!-- Escudo Oficial en 3D con efecto de relieve y parallax -->
+          <div class="club-hero__crest-stage" id="heroCrestStage">
+            <div class="club-hero__crest-frame" id="heroCrestFrame" title="Escudo Oficial Club La Checo">
+              <img src="escudvector.png" alt="Escudo Oficial Club Social Deportivo y Cultural La Checo" class="club-hero__crest-img">
+              <div class="club-hero__crest-glow"></div>
+            </div>
+          </div>
+
+          <!-- Insignia y Títulos -->
+          <div class="club-hero__badge">
+            <span>★</span>
+            <span>El Club de los Chicos • Florencio Varela</span>
+            <span>★</span>
+          </div>
+
+          <h1 class="club-hero__title">CLUB LA CHECO</h1>
+          <p class="club-hero__subtitle">PASIÓN, FORMACIÓN Y VALORES EN EL CORAZÓN DE VARELA</p>
+
+          <p class="club-hero__lead">
+            Desde 2014, un espacio deportivo y social donde cientos de chicos y chicas crecen jugando al fútbol y al hockey. 
+            Acá la camiseta se lleva en el corazón, con alegría, compañerismo y orgullo de barrio.
+          </p>
+
+          <!-- Estadísticas del Club y los Chicos -->
+          <div class="club-hero__stats-grid">
+            <div class="club-hero__stat-card">
+              <span class="club-hero__stat-val">+350</span>
+              <span class="club-hero__stat-label">Chicos y Chicas</span>
+              <span class="club-hero__stat-sub">En formación deportiva</span>
+            </div>
+            <div class="club-hero__stat-card">
+              <span class="club-hero__stat-val">12</span>
+              <span class="club-hero__stat-label">Categorías Activas</span>
+              <span class="club-hero__stat-sub">Escuelita, UCIV y Hockey</span>
+            </div>
+            <div class="club-hero__stat-card">
+              <span class="club-hero__stat-val">10+</span>
+              <span class="club-hero__stat-label">Años de Historia</span>
+              <span class="club-hero__stat-sub">Fundado el 9/10/2014</span>
+            </div>
+            <div class="club-hero__stat-card">
+              <span class="club-hero__stat-val">100%</span>
+              <span class="club-hero__stat-label">Comunitario</span>
+              <span class="club-hero__stat-sub">Calle Suecia 1600</span>
+            </div>
+          </div>
+
+          <!-- Acciones principales -->
+          <div class="club-hero__actions">
+            <a href="#cracks" class="btn-patch btn-patch--primary">
+              <span>Conocé a los Cracks</span>
+              <span>⚽</span>
+            </a>
+            <a href="#pasarela" class="btn-patch btn-patch--secondary">
+              <span>Ver Pasarela de Fotos</span>
+              <span>📸</span>
+            </a>
+            <a href="#contacto" class="btn-patch btn-patch--secondary">
+              <span>¡Anotá a tu Hijo/a!</span>
+              <span>✍️</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         3. EL SEMILLERO & NUESTROS CRACKS EN ACCIÓN (.cracks-section)
+         Video JUGADOR.mp4, categorías formativas y modelos de camisetas de los chicos
+         ====================================================================== -->
+    <section class="cracks-section" id="cracks">
+      <div class="site-container">
+        <header class="section-header">
+          <span class="section-badge">Semillero en Acción</span>
+          <h2 class="section-title">Nuestros Cracks & El Semillero</h2>
+          <p class="section-subtitle">
+            En un club infantil de barrio, cada camada viste los colores del corazón con orgullo. Mirá la destreza, la pasión y la energía de nuestros chicos en la cancha.
+          </p>
+        </header>
+
+        <div class="cracks-grid">
+          <!-- Columna Izquierda: Reproductor del Video JUGADOR.mp4 con efecto televisivo/estadio -->
+          <div class="cracks-video-card">
+            <div class="cracks-video-card__viewport">
+              <video class="cracks-video-card__player" controls autoplay muted loop playsinline poster="img/niños.jpeg">
+                <source src="img/JUGADOR.mp4" type="video/mp4">
+                Tu navegador no soporta video HTML5.
+              </video>
+              <div class="cracks-video-card__live-badge">
+                <span class="cracks-video-card__dot"></span>
+                <span>DESTREZA & POTRERO</span>
+              </div>
+            </div>
+            <div class="cracks-video-card__footer">
+              <div class="cracks-video-card__info">
+                <h3 class="cracks-video-card__title">Talento, Gambeta y Corazón</h3>
+                <p class="cracks-video-card__desc">Cada entrenamiento es una oportunidad para aprender, divertirse y forjar amistades que duran toda la vida.</p>
+              </div>
+              <span class="cracks-video-card__tag">#SemilleroChequense</span>
+            </div>
+          </div>
+
+          <!-- Columna Derecha: Información de las Categorías y Modelos del Club -->
+          <div class="cracks-info-card">
+            <div class="cracks-info-card__header">
+              <span class="cracks-info-card__badge">Formativo & Competitivo</span>
+              <h3 class="cracks-info-card__title">Categorías de Fútbol & Hockey</h3>
+              <p class="cracks-info-card__text">
+                En La Checo todos los niños tienen su lugar. No cobramos cuotas prohibitivas y priorizamos que cada nene y nena tenga minutos en cancha.
+              </p>
+            </div>
+
+            <div class="cracks-categories">
+              <!-- Item 1: Escuelita -->
+              <div class="cracks-category-item">
+                <div class="cracks-category-item__icon">⚽</div>
+                <div class="cracks-category-item__details">
+                  <h4 class="cracks-category-item__title">Escuelita Inicial (4 a 6 Años)</h4>
+                  <p class="cracks-category-item__desc">Primer contacto con la pelota, psicomotricidad, coordinación y juegos de integración sin presiones.</p>
+                </div>
+              </div>
+
+              <!-- Item 2: Ligas UCIV -->
+              <div class="cracks-category-item">
+                <div class="cracks-category-item__icon">🏆</div>
+                <div class="cracks-category-item__details">
+                  <h4 class="cracks-category-item__title">Competencia UCIV (Cat. 2011 a 2019)</h4>
+                  <p class="cracks-category-item__desc">Participación en la Unión de Clubes Infantiles Varelenses. Partidos oficiales con árbitros y espíritu deportivo.</p>
+                </div>
+              </div>
+
+              <!-- Item 3: Hockey Femenino -->
+              <div class="cracks-category-item">
+                <div class="cracks-category-item__icon">🏑</div>
+                <div class="cracks-category-item__details">
+                  <h4 class="cracks-category-item__title">Hockey Infantil & Juvenil Femenino</h4>
+                  <p class="cracks-category-item__desc">Escuela formativa de hockey de campo y pista con el proyecto oficial @lachecohockey23.</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Nota sobre los Modelos de Camisetas de los Niños -->
+            <div class="cracks-jersey-note">
+              <div class="cracks-jersey-note__header">
+                <span class="cracks-jersey-note__icon">👕</span>
+                <h4 class="cracks-jersey-note__title">Varios Modelos, Una Sola Pasión</h4>
+              </div>
+              <p class="cracks-jersey-note__text">
+                Al ser un club infantil con tantas categorías y divisiones, existen distintos modelos de camisetas: 
+                algunas con franjas violetas y blancas, otras con detalles de fuego, modelos históricos o indumentarias especiales de hockey. 
+                ¡Todas llevan con orgullo el escudo bordado de La Checo en el pecho!
+              </p>
+            </div>
+
+            <div class="cracks-info-card__actions">
+              <a href="#contacto" class="btn-patch btn-patch--primary">
+                <span>Inscribir a un Jugador</span>
+                <span>⚽</span>
+              </a>
+              <a href="#pasarela" class="btn-patch btn-patch--secondary">
+                <span>Ver Fotos del Semillero</span>
+                <span>📸</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         4. LA PASARELA: GALERÍA Y CAROUSEL INTERACTIVO (.gallery-section)
+         ====================================================================== -->
+    <section class="gallery-section" id="pasarela">
+      <div class="site-container">
+        <header class="gallery-section__header">
+          <span class="section-badge">Galería Oficial</span>
+          <h2 class="section-title">Pasarela de Fotos & Mística</h2>
+          <p class="section-subtitle">
+            Recorré las postales de nuestro plantel, el semillero infantil, nuestra sede y los emblemas que forjan la pasión de La Checo.
+          </p>
+        </header>
+
+        <!-- Filtros de la Galería -->
+        <div class="gallery-filters" role="tablist" aria-label="Filtrar fotos">
+          <button type="button" class="gallery-filters__btn gallery-filters__btn--active" data-category="todas">
+            Todas las Postales
+          </button>
+          <button type="button" class="gallery-filters__btn" data-category="plantel">
+            Plantel & Figuras
+          </button>
+          <button type="button" class="gallery-filters__btn" data-category="infantil">
+            Semillero Infantil
+          </button>
+          <button type="button" class="gallery-filters__btn" data-category="sede">
+            Nuestra Sede
+          </button>
+          <button type="button" class="gallery-filters__btn" data-category="mistica">
+            Mística & Escudos
+          </button>
+        </div>
+
+        <!-- Carousel / Pasarela -->
+        <div class="pasarela">
+          <div class="pasarela__viewport">
+            <div class="pasarela__track" id="pasarelaTrack">
+
+              <!-- Tarjeta 1: Casaca de Barrio Pecho -->
+              <article class="pasarela-card" data-category="mistica">
+                <div class="pasarela-card__media">
+                  <img src="img/pecho.jpeg" alt="Detalle del pecho de la camiseta del club" class="pasarela-card__img" loading="lazy">
+                  <span class="pasarela-card__badge">Camiseta del Club</span>
+                  <div class="pasarela-card__zoom-indicator">🔍</div>
+                </div>
+                <div class="pasarela-card__body">
+                  <h3 class="pasarela-card__title">Nuestra Casaca de Barrio</h3>
+                  <p class="pasarela-card__caption">Detalle del bordado y textura micro-mesh de la indumentaria chequense.</p>
+                </div>
+              </article>
+
+              <!-- Tarjeta 2: Semillero Niños -->
+              <article class="pasarela-card" data-category="infantil">
+                <div class="pasarela-card__media">
+                  <img src="img/niños.jpeg" alt="Fútbol infantil de Club La Checo" class="pasarela-card__img" loading="lazy">
+                  <span class="pasarela-card__badge">Fútbol Infantil</span>
+                  <div class="pasarela-card__zoom-indicator">🔍</div>
+                </div>
+                <div class="pasarela-card__body">
+                  <h3 class="pasarela-card__title">Semillero en Cancha</h3>
+                  <p class="pasarela-card__caption">El compañerismo y la alegría de aprender jugando en equipo.</p>
+                </div>
+              </article>
+
+              <!-- Tarjeta 3: Dieguito -->
+              <article class="pasarela-card" data-category="plantel">
+                <div class="pasarela-card__media">
+                  <img src="img/dieguito.jpeg" alt="Dieguito - Jugador de La Checo" class="pasarela-card__img" loading="lazy">
+                  <span class="pasarela-card__badge">Plantel</span>
+                  <div class="pasarela-card__zoom-indicator">🔍</div>
+                </div>
+                <div class="pasarela-card__body">
+                  <h3 class="pasarela-card__title">Dieguito</h3>
+                  <p class="pasarela-card__caption">Entrega total y alegría con los colores de La Checo en el pecho.</p>
+                </div>
+              </article>
+
+              <!-- Tarjeta 4: Crischa -->
+              <article class="pasarela-card" data-category="plantel">
+                <div class="pasarela-card__media">
+                  <img src="img/crischa.jpeg" alt="Crischa - Jugador de La Checo" class="pasarela-card__img" loading="lazy">
+                  <span class="pasarela-card__badge">Plantel</span>
+                  <div class="pasarela-card__zoom-indicator">🔍</div>
+                </div>
+                <div class="pasarela-card__body">
+                  <h3 class="pasarela-card__title">Crischa</h3>
+                  <p class="pasarela-card__caption">Compromiso incondicional defendiendo los colores del club.</p>
+                </div>
+              </article>
+
+              <!-- Tarjeta 5: Sede Oficial -->
+              <article class="pasarela-card" data-category="sede">
+                <div class="pasarela-card__media">
+                  <img src="img/sede.jpeg" alt="Sede del Club La Checo en calle Suecia 1600" class="pasarela-card__img" loading="lazy">
+                  <span class="pasarela-card__badge">Nuestra Casa</span>
+                  <div class="pasarela-card__zoom-indicator">🔍</div>
+                </div>
+                <div class="pasarela-card__body">
+                  <h3 class="pasarela-card__title">Sede Calle Suecia 1600</h3>
+                  <p class="pasarela-card__caption">El punto de encuentro de las familias varelenses cada fin de semana.</p>
+                </div>
+              </article>
+
+              <!-- Tarjeta 6: Niños 2 -->
+              <article class="pasarela-card" data-category="infantil">
+                <div class="pasarela-card__media">
+                  <img src="img/niños2.jpeg" alt="Entrenamiento infantil de La Checo" class="pasarela-card__img" loading="lazy">
+                  <span class="pasarela-card__badge">Formación</span>
+                  <div class="pasarela-card__zoom-indicator">🔍</div>
+                </div>
+                <div class="pasarela-card__body">
+                  <h3 class="pasarela-card__title">Valores & Deporte</h3>
+                  <p class="pasarela-card__caption">Formando personas de bien antes que deportistas de elite.</p>
+                </div>
+              </article>
+
+              <!-- Tarjeta 7: Fabio -->
+              <article class="pasarela-card" data-category="plantel">
+                <div class="pasarela-card__media">
+                  <img src="img/fabio.jpeg" alt="Fabio - Referente de La Checo" class="pasarela-card__img" loading="lazy">
+                  <span class="pasarela-card__badge">Plantel</span>
+                  <div class="pasarela-card__zoom-indicator">🔍</div>
+                </div>
+                <div class="pasarela-card__body">
+                  <h3 class="pasarela-card__title">Fabio</h3>
+                  <p class="pasarela-card__caption">Corazón y presencia en la cancha para empujar al equipo.</p>
+                </div>
+              </article>
+
+              <!-- Tarjeta 8: Guly -->
+              <article class="pasarela-card" data-category="plantel">
+                <div class="pasarela-card__media">
+                  <img src="img/guly.jpeg" alt="Guly - Referente de La Checo" class="pasarela-card__img" loading="lazy">
+                  <span class="pasarela-card__badge">Plantel</span>
+                  <div class="pasarela-card__zoom-indicator">🔍</div>
+                </div>
+                <div class="pasarela-card__body">
+                  <h3 class="pasarela-card__title">Guly</h3>
+                  <p class="pasarela-card__caption">Garra y espíritu competitivo en cada pelota disputada.</p>
+                </div>
+              </article>
+
+              <!-- Tarjeta 9: Nico -->
+              <article class="pasarela-card" data-category="plantel">
+                <div class="pasarela-card__media">
+                  <img src="img/nico.jpeg" alt="Nico - Referente de La Checo" class="pasarela-card__img" loading="lazy">
+                  <span class="pasarela-card__badge">Plantel</span>
+                  <div class="pasarela-card__zoom-indicator">🔍</div>
+                </div>
+                <div class="pasarela-card__body">
+                  <h3 class="pasarela-card__title">Nico</h3>
+                  <p class="pasarela-card__caption">Despliegue y dinámica con el amor por la camiseta intacto.</p>
+                </div>
+              </article>
+
+              <!-- Tarjeta 10: Oscar -->
+              <article class="pasarela-card" data-category="plantel">
+                <div class="pasarela-card__media">
+                  <img src="img/oscar.jpeg" alt="Oscar - Referente de La Checo" class="pasarela-card__img" loading="lazy">
+                  <span class="pasarela-card__badge">Plantel</span>
+                  <div class="pasarela-card__zoom-indicator">🔍</div>
+                </div>
+                <div class="pasarela-card__body">
+                  <h3 class="pasarela-card__title">Oscar</h3>
+                  <p class="pasarela-card__caption">Liderazgo de grupo y serenidad en los momentos decisivos.</p>
+                </div>
+              </article>
+
+              <!-- Tarjeta 11: Melli -->
+              <article class="pasarela-card" data-category="plantel">
+                <div class="pasarela-card__media">
+                  <img src="img/melli.jpeg" alt="El Melli - Referente de La Checo" class="pasarela-card__img" loading="lazy">
+                  <span class="pasarela-card__badge">Plantel</span>
+                  <div class="pasarela-card__zoom-indicator">🔍</div>
+                </div>
+                <div class="pasarela-card__body">
+                  <h3 class="pasarela-card__title">El Melli</h3>
+                  <p class="pasarela-card__caption">Velocidad, desborde y sacrificio por los colores del club.</p>
+                </div>
+              </article>
+
+              <!-- Tarjeta 12: Migo -->
+              <article class="pasarela-card" data-category="plantel">
+                <div class="pasarela-card__media">
+                  <img src="img/migo.jpeg" alt="Migo - Referente de La Checo" class="pasarela-card__img" loading="lazy">
+                  <span class="pasarela-card__badge">Plantel</span>
+                  <div class="pasarela-card__zoom-indicator">🔍</div>
+                </div>
+                <div class="pasarela-card__body">
+                  <h3 class="pasarela-card__title">Migo</h3>
+                  <p class="pasarela-card__caption">Firmeza y sentido de pertenencia en cada encuentro.</p>
+                </div>
+              </article>
+
+              <!-- Tarjeta 13: León -->
+              <article class="pasarela-card" data-category="mistica">
+                <div class="pasarela-card__media">
+                  <img src="img/leon.jpeg" alt="El León de La Checo" class="pasarela-card__img" loading="lazy">
+                  <span class="pasarela-card__badge">Mística</span>
+                  <div class="pasarela-card__zoom-indicator">🔍</div>
+                </div>
+                <div class="pasarela-card__body">
+                  <h3 class="pasarela-card__title">El León Varelense</h3>
+                  <p class="pasarela-card__caption">El rugido que alienta a nuestras categorías dentro y fuera de la cancha.</p>
+                </div>
+              </article>
+
+              <!-- Tarjeta 14: Gárgola -->
+              <article class="pasarela-card" data-category="mistica">
+                <div class="pasarela-card__media">
+                  <img src="img/gargola.jpeg" alt="La Gárgola Chequense" class="pasarela-card__img" loading="lazy">
+                  <span class="pasarela-card__badge">Símbolo</span>
+                  <div class="pasarela-card__zoom-indicator">🔍</div>
+                </div>
+                <div class="pasarela-card__body">
+                  <h3 class="pasarela-card__title">La Gárgola Guardiana</h3>
+                  <p class="pasarela-card__caption">El símbolo que custodia la mística y la unión de nuestra institución.</p>
+                </div>
+              </article>
+
+              <!-- Tarjeta 15: Escudo Fuego -->
+              <article class="pasarela-card" data-category="mistica">
+                <div class="pasarela-card__media">
+                  <img src="img/escudo fuego.jpeg" alt="Escudo versión Fuego Club La Checo" class="pasarela-card__img" loading="lazy">
+                  <span class="pasarela-card__badge">Edición Fuego</span>
+                  <div class="pasarela-card__zoom-indicator">🔍</div>
+                </div>
+                <div class="pasarela-card__body">
+                  <h3 class="pasarela-card__title">Escudo Fuego & Pasión</h3>
+                  <p class="pasarela-card__caption">Variante llameante para noches de clásicos y torneos nocturnos.</p>
+                </div>
+              </article>
+
+              <!-- Tarjeta 16: Escudo Violeta -->
+              <article class="pasarela-card" data-category="mistica">
+                <div class="pasarela-card__media">
+                  <img src="img/escudo viole.jpeg" alt="Escudo versión Violeta Club La Checo" class="pasarela-card__img" loading="lazy">
+                  <span class="pasarela-card__badge">Violeta Tradición</span>
+                  <div class="pasarela-card__zoom-indicator">🔍</div>
+                </div>
+                <div class="pasarela-card__body">
+                  <h3 class="pasarela-card__title">Escudo Violeta Tradicional</h3>
+                  <p class="pasarela-card__caption">El tono original que da vida a la historia de La Checo.</p>
+                </div>
+              </article>
+
+              <!-- Tarjeta 17: Escudo Clásico -->
+              <article class="pasarela-card" data-category="mistica">
+                <div class="pasarela-card__media">
+                  <img src="img/escudo.jpeg" alt="Escudo Emblema Club La Checo" class="pasarela-card__img" loading="lazy">
+                  <span class="pasarela-card__badge">Escudo Emblema</span>
+                  <div class="pasarela-card__zoom-indicator">🔍</div>
+                </div>
+                <div class="pasarela-card__body">
+                  <h3 class="pasarela-card__title">Escudo Emblema Histórico</h3>
+                  <p class="pasarela-card__caption">El blasón que dio inicio a los sueños de La Checo en Florencio Varela.</p>
+                </div>
+              </article>
+
+              <!-- Tarjeta 18: Camiseta Especial Faaa -->
+              <article class="pasarela-card" data-category="mistica">
+                <div class="pasarela-card__media">
+                  <img src="img/camiseta faaa.png" alt="Camiseta Edición Especial La Checo" class="pasarela-card__img" loading="lazy">
+                  <span class="pasarela-card__badge">Indumentaria</span>
+                  <div class="pasarela-card__zoom-indicator">🔍</div>
+                </div>
+                <div class="pasarela-card__body">
+                  <h3 class="pasarela-card__title">Camiseta Edición Especial</h3>
+                  <p class="pasarela-card__caption">Diseño exclusivo de indumentaria oficial con franjas violetas.</p>
+                </div>
+              </article>
+
+              <!-- Tarjeta 19: Camiseta Histórica -->
+              <article class="pasarela-card" data-category="mistica">
+                <div class="pasarela-card__media">
+                  <img src="img/camiseta historica.jpg" alt="Camiseta Histórica La Checo" class="pasarela-card__img" loading="lazy">
+                  <span class="pasarela-card__badge">Historia Textil</span>
+                  <div class="pasarela-card__zoom-indicator">🔍</div>
+                </div>
+                <div class="pasarela-card__body">
+                  <h3 class="pasarela-card__title">Camiseta Histórica de Barrio</h3>
+                  <p class="pasarela-card__caption">La prenda con la que comenzó la pasión deportiva en Florencio Varela.</p>
+                </div>
+              </article>
+
+            </div>
+          </div>
+
+          <!-- Controles de la Pasarela -->
+          <div class="pasarela-nav">
+            <div class="pasarela-dots" id="pasarelaDots"></div>
+            <div class="pasarela-nav__controls">
+              <button type="button" class="pasarela-btn" id="pasarelaPrev" aria-label="Foto anterior">‹</button>
+              <button type="button" class="pasarela-btn" id="pasarelaNext" aria-label="Siguiente foto">›</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         5. SPOTLIGHT DE VIDEO: "EL CORAZÓN CHEQUENSE" (.video-spotlight)
+         ====================================================================== -->
+    <section class="video-spotlight" id="video-corazon">
+      <div class="site-container">
+        <div class="video-card">
+          <!-- Reproductor de Video -->
+          <div class="video-card__player-box">
+            <video class="video-card__player" controls autoplay muted loop playsinline poster="img/pecho.jpeg">
+              <source src="img/corazon.mp4" type="video/mp4">
+              Tu navegador no soporta reproducción de video HTML5.
+            </video>
+          </div>
+
+          <!-- Contenido del Video -->
+          <div class="video-card__content">
+            <span class="section-badge">El Latido del Club</span>
+            <h2 class="video-card__quote">
+              "LATE EL CORAZÓN DE <span class="video-card__quote-highlight">LA CHECO</span> EN CADA RINCÓN DE VARELA"
+            </h2>
+            <p class="video-card__text">
+              La Checo no es solamente un equipo que compite los fines de semana: es un espacio de contención, 
+              encuentro de amigos, mates al costado de la cancha y crecimiento para cientos de pibes y pibas de nuestro barrio.
+            </p>
+
+            <div class="video-card__features">
+              <div class="video-card__feature-item">
+                <span class="video-card__feature-icon">♥</span>
+                <span>Fútbol formativo que prioriza el juego limpio y el compañerismo.</span>
+              </div>
+              <div class="video-card__feature-item">
+                <span class="video-card__feature-icon">★</span>
+                <span>Hockey femenino federado con identidad propia (@lachecohockey23).</span>
+              </div>
+              <div class="video-card__feature-item">
+                <span class="video-card__feature-icon">✓</span>
+                <span>Una institución sin fines de lucro abierta a la comunidad varelense.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         6. SECCIÓN HISTORIA & IDENTIDAD (.history-section)
+         ====================================================================== -->
+    <section class="history-section" id="historia">
+      <div class="site-container">
+        <header class="gallery-section__header">
+          <span class="section-badge">Nuestras Raíces</span>
+          <h2 class="section-title">Historia & Sentido de Pertenencia</h2>
+          <p class="section-subtitle">
+            Conocé la trayectoria de la Asociación Club Social, Deportivo y Cultural La Checo.
+          </p>
+        </header>
+
+        <div class="history-grid">
+          <!-- Hito 1: Fundación -->
+          <article class="history-card">
+            <div class="history-card__icon">🏛️</div>
+            <h3 class="history-card__title">Fundado en 2014</h3>
+            <p class="history-card__text">
+              Constituida formalmente el <strong>9 de octubre de 2014</strong> por vecinos y apasionados del deporte, 
+              con el sueño de brindar a la juventud de Florencio Varela un espacio propio de contención social y desarrollo deportivo.
+            </p>
+          </article>
+
+          <!-- Hito 2: Nuestra Sede -->
+          <article class="history-card">
+            <div class="history-card__icon">📍</div>
+            <h3 class="history-card__title">Calle Suecia 1600</h3>
+            <p class="history-card__text">
+              En el corazón del partido de Florencio Varela, nuestra sede social alberga entrenamientos diarios, 
+              jornadas de fin de semana, reuniones sociales y actividades que fortalecen lazos vecinales.
+            </p>
+          </article>
+
+          <!-- Hito 3: Unión Varelense UCIV -->
+          <article class="history-card">
+            <div class="history-card__icon">🏆</div>
+            <h3 class="history-card__title">Unión de Clubes Infantiles</h3>
+            <p class="history-card__text">
+              Participamos activamente en torneos oficiales y encuentros formativos de la 
+              <strong>Unión de Clubes Infantiles Varelenses (UCIV)</strong> y ligas zonales de fútbol barrial.
+            </p>
+          </article>
+
+          <!-- Hito 4: Formación & Valores -->
+          <article class="history-card">
+            <div class="history-card__icon">🤝</div>
+            <h3 class="history-card__title">Valores Innegociables</h3>
+            <p class="history-card__text">
+              Fomentamos la disciplina, la solidaridad y el respeto mutuo. La camiseta no se mancha: 
+              se defiende con honor, deportividad y compañerismo en cada categoría.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         7. SECCIÓN ACTIVIDADES DEPORTIVAS (.activities-section)
+         ====================================================================== -->
+    <section class="activities-section" id="actividades">
+      <div class="site-container">
+        <header class="gallery-section__header">
+          <span class="section-badge">Disciplinas</span>
+          <h2 class="section-title">Deportes en La Checo</h2>
+          <p class="section-subtitle">
+            Entrenamientos planificados, cuerpos técnicos dedicados y un ambiente familiar para todas las edades.
+          </p>
+        </header>
+
+        <div class="activities-grid">
+          <!-- Actividad 1: Fútbol Infantil -->
+          <article class="activity-card">
+            <div class="activity-card__media">
+              <img src="img/niños.jpeg" alt="Fútbol Infantil La Checo" class="activity-card__img" loading="lazy">
+              <span class="activity-card__tag">Masculino & Femenino</span>
+            </div>
+            <div class="activity-card__body">
+              <h3 class="activity-card__title">Fútbol Infantil Formativo</h3>
+              <p class="activity-card__desc">
+                Escuelita y categorías competitivas para chicos y chicas desde los 4 hasta los 16 años. 
+                Desarrollo motriz, táctico y humano guiado por profesores comprometidos.
+              </p>
+              <ul class="activity-card__list">
+                <li class="activity-card__list-item">
+                  <span class="activity-card__check">✓</span>
+                  <span>Participación en liga UCIV y copas amistosas</span>
+                </li>
+                <li class="activity-card__list-item">
+                  <span class="activity-card__check">✓</span>
+                  <span>Entrenamientos semanales divididos por categorías</span>
+                </li>
+                <li class="activity-card__list-item">
+                  <span class="activity-card__check">✓</span>
+                  <span>Seguro deportivo y acompañamiento familiar</span>
+                </li>
+              </ul>
+            </div>
+          </article>
+
+          <!-- Actividad 2: Hockey Femenino -->
+          <article class="activity-card">
+            <div class="activity-card__media">
+              <img src="img/gargola.jpeg" alt="Hockey Femenino La Checo" class="activity-card__img" loading="lazy">
+              <span class="activity-card__tag">@lachecohockey23</span>
+            </div>
+            <div class="activity-card__body">
+              <h3 class="activity-card__title">Hockey Femenino Chequense</h3>
+              <p class="activity-card__desc">
+                Un proyecto deportivo en constante crecimiento con gran protagonismo femenino. 
+                Técnica con palo y bocha, velocidad, estrategia y un grupo humano extraordinario.
+              </p>
+              <ul class="activity-card__list">
+                <li class="activity-card__list-item">
+                  <span class="activity-card__check">✓</span>
+                  <span>Categorías infantiles, juveniles y primera división</span>
+                </li>
+                <li class="activity-card__list-item">
+                  <span class="activity-card__check">✓</span>
+                  <span>Partidos de fin de semana y clínicas formativas</span>
+                </li>
+                <li class="activity-card__list-item">
+                  <span class="activity-card__check">✓</span>
+                  <span>Instagram oficial dedicado: @lachecohockey23</span>
+                </li>
+              </ul>
+            </div>
+          </article>
+
+          <!-- Actividad 3: Espacio Comunitario y Social -->
+          <article class="activity-card">
+            <div class="activity-card__media">
+              <img src="img/sede.jpeg" alt="Espacio Comunitario La Checo" class="activity-card__img" loading="lazy">
+              <span class="activity-card__tag">Comunidad</span>
+            </div>
+            <div class="activity-card__body">
+              <h3 class="activity-card__title">Acción Social y Cultural</h3>
+              <p class="activity-card__desc">
+                Servicios formativos y actividades comunitarias destinadas a enriquecer el bienestar de los vecinos 
+                de Florencio Varela. Talleres, celebraciones del día del niño y encuentros barriales.
+              </p>
+              <ul class="activity-card__list">
+                <li class="activity-card__list-item">
+                  <span class="activity-card__check">✓</span>
+                  <span>Encuentros de integración barrial y festivales</span>
+                </li>
+                <li class="activity-card__list-item">
+                  <span class="activity-card__check">✓</span>
+                  <span>Tercer tiempo de camaradería entre clubes</span>
+                </li>
+                <li class="activity-card__list-item">
+                  <span class="activity-card__check">✓</span>
+                  <span>Espacio abierto para proyectos formativos</span>
+                </li>
+              </ul>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         8. SECCIÓN LA SEDE & UBICACIÓN (.venue-section)
+         ====================================================================== -->
+    <section class="venue-section" id="sede">
+      <div class="site-container">
+        <header class="gallery-section__header">
+          <span class="section-badge">Instalaciones</span>
+          <h2 class="section-title">Nuestra Casa en Florencio Varela</h2>
+          <p class="section-subtitle">
+            Vení a conocer la sede de Calle Suecia 1600. Nuestras puertas están abiertas para vos y tu familia.
+          </p>
+        </header>
+
+        <div class="venue-card">
+          <!-- Imagen de la sede -->
+          <div class="venue-card__media">
+            <img src="img/sede.jpeg" alt="Instalaciones del Club La Checo" class="venue-card__img" loading="lazy">
+          </div>
+
+          <!-- Información y Mapa -->
+          <div class="venue-card__content">
+            <h3 class="section-title">Sede Social & Cancha</h3>
+            
+            <div class="venue-info-list">
+              <!-- Dirección -->
+              <div class="venue-info-item">
+                <div class="venue-info-icon">📍</div>
+                <div class="venue-info-details">
+                  <span class="venue-info-title">Dirección de Sede Social</span>
+                  <span class="venue-info-desc">Calle Suecia Nº 1600, Florencio Varela, Buenos Aires (CP 1888)</span>
+                </div>
+              </div>
+
+              <!-- Domicilio Fiscal -->
+              <div class="venue-info-item">
+                <div class="venue-info-icon">📋</div>
+                <div class="venue-info-details">
+                  <span class="venue-info-title">Domicilio Legal & Fiscal</span>
+                  <span class="venue-info-desc">París 1436, Florencio Varela, Prov. de Buenos Aires</span>
+                </div>
+              </div>
+
+              <!-- Teléfono -->
+              <div class="venue-info-item">
+                <div class="venue-info-icon">📞</div>
+                <div class="venue-info-details">
+                  <span class="venue-info-title">Atención Telefónica / WhatsApp</span>
+                  <span class="venue-info-desc">+54 11 4426-5004</span>
+                </div>
+              </div>
+
+              <!-- Transporte -->
+              <div class="venue-info-item">
+                <div class="venue-info-icon">🚌</div>
+                <div class="venue-info-details">
+                  <span class="venue-info-title">Cómo Llegar</span>
+                  <span class="venue-info-desc">Fácil acceso desde el centro de Florencio Varela y líneas de colectivo locales</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Botón Google Maps -->
+            <a href="https://maps.app.goo.gl/iFwz36TUvnyZX8fS8" target="_blank" rel="noopener noreferrer" class="venue-map-link">
+              <span>Abrir en Google Maps</span>
+              <span>🗺️</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         9. SECCIÓN CONTACTO & REDES (.contact-section)
+         ====================================================================== -->
+    <section class="contact-section" id="contacto">
+      <div class="site-container">
+        <header class="gallery-section__header">
+          <span class="section-badge">Comunidad Chequense</span>
+          <h2 class="section-title">Comunicate con Nosotros</h2>
+          <p class="section-subtitle">
+            ¿Querés anotar a tu hijo/a en fútbol o hockey, sumarte como colaborador o solicitar información de la institución?
+          </p>
+        </header>
+
+        <div class="contact-grid">
+          <!-- Canales Directos -->
+          <div class="contact-card">
+            <h3 class="contact-card__title">Canales Directos</h3>
+            <p class="contact-card__desc">
+              Contactate con nuestra secretaría deportiva o seguinos en nuestras redes para estar al día con resultados, tablas y fechas.
+            </p>
+
+            <div class="contact-channels">
+              <!-- Teléfono / WhatsApp -->
+              <a href="https://wa.me/541144265004?text=Hola%20Club%20La%20Checo!%20Quisiera%20recibir%20informaci%C3%B3n%20sobre%20las%20actividades." target="_blank" rel="noopener noreferrer" class="contact-item-btn">
+                <div class="contact-item-btn__icon">📱</div>
+                <div class="contact-item-btn__info">
+                  <span class="contact-item-btn__title">WhatsApp Directo</span>
+                  <span class="contact-item-btn__value">+54 11 4426-5004</span>
+                </div>
+              </a>
+
+              <!-- Instagram Hockey -->
+              <a href="https://www.instagram.com/lachecohockey23/" target="_blank" rel="noopener noreferrer" class="contact-item-btn">
+                <div class="contact-item-btn__icon">📸</div>
+                <div class="contact-item-btn__info">
+                  <span class="contact-item-btn__title">Instagram Hockey Femenino</span>
+                  <span class="contact-item-btn__value">@lachecohockey23</span>
+                </div>
+              </a>
+
+              <!-- Facebook -->
+              <a href="https://www.facebook.com/p/Club-la-CHECO-61581554888677/" target="_blank" rel="noopener noreferrer" class="contact-item-btn">
+                <div class="contact-item-btn__icon">👥</div>
+                <div class="contact-item-btn__info">
+                  <span class="contact-item-btn__title">Facebook Comunitario</span>
+                  <span class="contact-item-btn__value">Club la CHECO</span>
+                </div>
+              </a>
+            </div>
+          </div>
+
+          <!-- Formulario de Consulta -->
+          <div class="contact-card">
+            <h3 class="contact-card__title">Envianos tu Consulta</h3>
+            <form class="contact-form" onsubmit="event.preventDefault(); alert('¡Gracias por tu mensaje! Nos pondremos en contacto a la brevedad con vos.'); this.reset();">
+              <div class="form-group">
+                <label for="contactNombre" class="form-label">Nombre y Apellido</label>
+                <input type="text" id="contactNombre" class="form-input" placeholder="Tu nombre completo" required>
+              </div>
+
+              <div class="form-group">
+                <label for="contactTelefono" class="form-label">Teléfono / WhatsApp</label>
+                <input type="tel" id="contactTelefono" class="form-input" placeholder="Ej: 11 4426-5004" required>
+              </div>
+
+              <div class="form-group">
+                <label for="contactDisciplina" class="form-label">Actividad de Interés</label>
+                <select id="contactDisciplina" class="form-select">
+                  <option value="futbol">Fútbol Infantil Masculino</option>
+                  <option value="futbol-fem">Fútbol Infantil Femenino</option>
+                  <option value="hockey">Hockey Femenino</option>
+                  <option value="social">Socio / Colaborador</option>
+                  <option value="otro">Otras consultas</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="contactMensaje" class="form-label">Mensaje o Consulta</label>
+                <textarea id="contactMensaje" class="form-textarea" placeholder="¿En qué te podemos ayudar?" rows="3" required></textarea>
+              </div>
+
+              <button type="submit" class="form-submit-btn">Enviar Mensaje</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ======================================================================
+       10. MODAL LIGHTBOX PARA LA PASARELA (.lightbox)
+       ====================================================================== -->
+  <div class="lightbox" id="lightboxModal" role="dialog" aria-modal="true" aria-label="Visualizador de imágenes">
+    <div class="lightbox__dialog">
+      <button type="button" class="lightbox__close-btn" id="lightboxClose" aria-label="Cerrar ventana">✕</button>
+      <div class="lightbox__image-container">
+        <img src="" alt="" id="lightboxImg" class="lightbox__img">
+      </div>
+      <div class="lightbox__caption-box">
+        <h4 id="lightboxTitle" class="lightbox__title">Club La Checo</h4>
+        <p id="lightboxDesc" class="lightbox__desc">Postal Oficial de la institución.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ======================================================================
+       11. FOOTER: "EL DOBLADILLO DE LA CAMISETA" (.jersey-footer)
+       ====================================================================== -->
+  <footer class="jersey-footer">
+    <!-- Costura inferior del dobladillo de la camiseta -->
+    <div class="jersey-footer__stitching"></div>
+
+    <div class="site-container">
+      <div class="jersey-footer__inner">
+        <!-- Identidad de Marca -->
+        <div class="jersey-footer__brand">
+          <div class="jersey-footer__brand-row">
+            <img src="escudvector.png" alt="Escudo Oficial Club La Checo" class="jersey-footer__crest">
+            <div>
+              <span class="jersey-footer__club-name">CLUB LA CHECO</span>
+              <p class="jersey-hero__crest-tag">Florencio Varela • Prov. de Buenos Aires</p>
+            </div>
+          </div>
+          <p class="jersey-footer__motto">
+            Asociación Club Social, Deportivo y Cultural La Checo. 
+            Más de una década de fútbol, hockey y contención social para las familias varelenses.
+          </p>
+        </div>
+
+        <!-- Enlaces Rápidos -->
+        <div class="jersey-footer__nav-group">
+          <h4 class="jersey-footer__heading">Navegación</h4>
+          <a href="#inicio" class="jersey-footer__link">Inicio</a>
+          <a href="#cracks" class="jersey-footer__link">Semillero & Cracks</a>
+          <a href="#pasarela" class="jersey-footer__link">Pasarela de Fotos</a>
+          <a href="#video-corazon" class="jersey-footer__link">El Corazón Chequense</a>
+          <a href="#historia" class="jersey-footer__link">Nuestra Historia</a>
+          <a href="#actividades" class="jersey-footer__link">Deportes & Fútbol</a>
+          <a href="#sede" class="jersey-footer__link">Sede & Ubicación</a>
+        </div>
+
+        <!-- Información Institucional -->
+        <div class="jersey-footer__nav-group">
+          <h4 class="jersey-footer__heading">Sede & Redes</h4>
+          <span class="jersey-footer__link">Calle Suecia 1600, F. Varela</span>
+          <span class="jersey-footer__link">Tel: +54 11 4426-5004</span>
+          <a href="https://www.instagram.com/lachecohockey23/" target="_blank" rel="noopener noreferrer" class="jersey-footer__link">Instagram Hockey</a>
+          <a href="https://www.facebook.com/p/Club-la-CHECO-61581554888677/" target="_blank" rel="noopener noreferrer" class="jersey-footer__link">Facebook Oficial</a>
+          <a href="https://maps.app.goo.gl/iFwz36TUvnyZX8fS8" target="_blank" rel="noopener noreferrer" class="jersey-footer__link">Ver en Google Maps</a>
+        </div>
+      </div>
+
+      <!-- Barra de Cierre y Copyright -->
+      <div class="jersey-footer__bottom-bar">
+        <span>© 2014 - 2026 Club Social, Deportivo y Cultural La Checo. Todos los derechos reservados.</span>
+        <span class="jersey-footer__legal-note">Personería & Registro Comunitario • Florencio Varela, Argentina</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Script de Interactividad -->
+  <script src="app.js"></script>
+</body>
+</html>
